@@ -1,0 +1,42 @@
+.app-logo-container {
+  /* background-color: aquamarine; */
+  width: 260px;
+  min-width: 260px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.app-logo-container:hover {
+    cursor: pointer;
+  }
+
+.app-logo-container:hover .app-logo-text{
+  color: rgb(255, 207, 105);
+  -webkit-text-stroke-color: rgb(209, 136, 41);
+  text-shadow: 3px 0 rgb(209, 136, 41);
+}
+
+.app-logo-img-container {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo-img {
+  height: 50px;
+  width: 50px;
+}
+
+.app-logo-text {
+  font-size: 50px;
+  font-family: "Passion One", cursive;
+  -webkit-text-stroke-width: 2px;
+  color: white;
+  -webkit-text-stroke-color: darkgrey;
+  text-shadow: 3px 0 darkgrey;
+  letter-spacing: 0.2rem;
+}

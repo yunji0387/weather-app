@@ -1,0 +1,25 @@
+.social-icon__item {
+  list-style: none;
+  /* background-color: rgb(31, 44, 44); */
+  /* height: 4vh; */
+  /* width: 10vh; */
+  margin: 0 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+}
+
+.social-icon-img-size {
+  height: 3vh;
+  width: 3vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.1s;
+}
+
+.social-icon-img-size:hover {
+  height: 4vh;
+  width: 4vh;
+}
