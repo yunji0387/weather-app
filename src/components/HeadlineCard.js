@@ -36,29 +36,6 @@ const HeadlineCard = (props) => {
             </div>
         </div>
     );
-
-    // return (
-    //     <div className="headline-container">
-    //         <div className="headline-content">
-    //             <div className="headline-content-left-container">
-    //                 <div className="headline-weather-location">
-    //                     <p>{weatherInfo.curr.cityName}</p>
-    //                 </div>
-    //                 <div className="headline-weather-img">
-    //                     <img src={weatherInfo.curr.iconURL} alt={weatherInfo.curr.icon} />
-    //                 </div>
-    //             </div>
-    //             <div className="headline-content-right-container">
-    //                 <div className="headline-weather-degree">
-    //                     <p>{weatherInfo.curr.temp}</p>
-    //                 </div>
-    //                 <div className="headline-weather-description">
-    //                     <p>{weatherInfo.curr.description}</p>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    // );
 };
 
 export default HeadlineCard;
