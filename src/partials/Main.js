@@ -28,7 +28,6 @@ const Main = () => {
 
     const fetchWeatherData = async () => {
         const access_key = process.env.REACT_APP_WEATHER_ACESS_KEY;
-        console.log(JSON.stringify({ key: access_key }));
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -37,20 +36,13 @@ const Main = () => {
         await fetch('https://sky-cast-backend-b4e180440fb6.herokuapp.com/', requestOptions)
             .then((response) => response.json())
             .then((jsonData) => {
-                console.log(jsonData);
+                setWeatherInfo(jsonData);
+                setLoading(false);
             })
             .catch((error) => {
                 console.log(error);
                 setLoading(false);
             });
-        // .then((jsonData) => {
-        //     setWeatherInfo(jsonData);
-        //     setLoading(false);
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        //     setLoading(false);
-        // });
 
     };
 
