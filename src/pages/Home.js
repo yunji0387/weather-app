@@ -5,7 +5,6 @@ import Main from '../partials/Main';
 import Footer from '../partials/Footer';
 
 function Home() {
-
   return (
     <div className="home">
       <Header />

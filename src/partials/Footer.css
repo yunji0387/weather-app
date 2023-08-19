@@ -5,13 +5,14 @@
   display: flex;
   justify-content: center; 
   align-items: center;
-  flex-direction: row;
-  background-color: black;
+  /* flex-direction: row; */
+  /* background-color: rgb(129, 112, 112); */
   position: fixed;
   bottom: 0;
+
 }
 
-.social-icon-container {
+/* .social-icon-container {
   width: 50vw;
   height: 4vh;
   display: flex;
@@ -19,7 +20,7 @@
   justify-content: center;
   flex-direction: row;
   margin: 0;
-  /* background-color: aquamarine; */
+  background-color: aquamarine;
 }
 
 .social-icon ul{
@@ -31,13 +32,14 @@
   flex-direction: row;
   width: 50vw;
   height: 4vh;
-  /* background-color: blue; */
-}
+  background-color: blue;
+} */
 
 .footer-text {
   /* text-align: center; */
-  color: white;
-  font-size: 15px;
+  /* color: white; */
+  color: #494444;
+  font-size: 20px;
   font-weight: bold;
   height: 3vh;
   /* background-color: blueviolet; */

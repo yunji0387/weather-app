@@ -1,0 +1,123 @@
+.headline-container {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(4, 4, 88); */
+}
+
+.headline-content {
+  width: 80%;
+  height: 90%;
+  background-color: aliceblue;
+  border-radius: 20px;
+  border: 5px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headline-content-error {
+  width: 80%;
+  height: 90%;
+  background-color: aliceblue;
+  border-radius: 20px;
+  border: 5px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.headline-content-error-heading {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.headline-content-error-text {
+  font-size: 20px;
+}
+
+.headline-content-left-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: aqua; */
+}
+
+.headline-content-right-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: aquamarine; */
+}
+
+.headline-weather-img-container {
+  width: 75%;
+  height: 55%;
+  /* background-color: white; */
+  border-radius: 20px;
+}
+
+.headline-weather-img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.headline-weather-location-container {
+  width: 75%;
+  height: 20%;
+  /* background-color: white; */
+  border-radius: 20px;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline-weather-location-text {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.headline-weather-degree-container {
+  width: 75%;
+  height: 30%;
+  /* background-color: white; */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline-weather-degree-text {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+.headline-weather-description-container {
+  width: 75%;
+  height: 25%;
+  /* background-color: white; */
+  border-radius: 20px;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline-weather-description-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+  

@@ -1,0 +1,46 @@
+.subline-card-container {
+  width: 19%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.subline-content {
+  width: 100%;
+  height: 90%;
+  background-color: #ccc;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.subline-content-img-container {
+  width: 80%;
+  height: 40%;
+  background-color: white;
+}
+
+.subline-content-img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.subline-content-degree-container {
+  width: 80%;
+  height: 20%;
+  background-color: white;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subline-content-degree-text {
+  font-size: 15px;
+    font-weight: bold;
+}

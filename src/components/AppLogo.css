@@ -24,11 +24,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.1s;
 }
 
 .app-logo-img {
   height: 50px;
   width: 50px;
+  animation: ccw-icon-rotation 25s infinite linear;
+}
+
+@keyframes ccw-icon-rotation {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 .app-logo-text {
