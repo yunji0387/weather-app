@@ -13,7 +13,7 @@ const Main = () => {
     const [loading, setLoading] = useState(true);
 
     const fetchWeatherData = async () => {
-        fetch(`http://localhost:3000/`)
+        fetch(`https://sky-cast-backend-b4e180440fb6.herokuapp.com/`)
             .then((response) => response.json())
             .then((jsonData) => {
                 setWeatherInfo(jsonData);
