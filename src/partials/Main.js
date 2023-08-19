@@ -28,6 +28,7 @@ const Main = () => {
   
     const fetchWeatherData = async () => {
         const access_key = process.env.REACT_APP_WEATHER_ACESS_KEY;
+        console.log(JSON.stringify({ key: access_key }));
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
