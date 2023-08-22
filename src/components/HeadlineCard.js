@@ -14,7 +14,6 @@ const HeadlineCard = (props) => {
         );
     }
 
-    // const options = { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric" };
     const dateFormat = { hour: "numeric", minute: "numeric" };
     const lastUpdate = new Date(props.weatherData.lastUpdate);
     const convertedLastUpdate = lastUpdate.toLocaleDateString("en-US", dateFormat);
@@ -35,13 +34,13 @@ const HeadlineCard = (props) => {
                 </div>
                 <div className="headline-content-right-container">
                     <div className="headline-weather-wind-container">
-                        <p className="headline-weather-wind-text">wind: {props.weatherData.wind.deg}&deg; in {props.weatherData.wind.speed} m/s</p>
+                        <p className="headline-weather-wind-text">wind: {props.weatherData.wind.speed}m/s in {props.weatherData.wind.deg}&deg;</p>
                     </div>
                     <div className="headline-weather-feelslike-container">
-                        <p className="headline-weather-feelslike-text">feels like: {props.weatherData.main.feels_like}&deg;</p>
+                        <p className="headline-weather-feelslike-text">feels like: {Math.round(props.weatherData.main.feels_like)}&deg;</p>
                     </div>
                     <div className="headline-weather-degree-container">
-                        <p className="headline-weather-degree-text">{props.weatherData.main.temp}&deg;</p>
+                        <p className="headline-weather-degree-text">{Math.round(props.weatherData.main.temp)}&deg;</p>
                     </div>
                     <div className="headline-weather-description-container">
                         <p className="headline-weather-description-text">{props.weatherData.weather[0].description}</p>

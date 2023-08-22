@@ -23,7 +23,7 @@ const SublineCard = (props) => {
 
             <div className="subline-content">
                 <div className="subline-content-degree-container">
-                    <p className="subline-content-degree-text">{props.forecast.temp}&deg;</p>
+                    <p className="subline-content-degree-text">&nbsp;{Math.round(props.forecast.temp)}&deg;</p>
                 </div>
                 <div className="subline-content-img-container">
                     <img src={props.forecast.iconURL} alt="" className="subline-content-img" />
