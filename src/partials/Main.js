@@ -21,8 +21,8 @@ const Main = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ key: access_key })
         };
-        // await fetch('http://localhost:3000/data', requestOptions)
-        await fetch('https://sky-cast-backend-b4e180440fb6.herokuapp.com/data', requestOptions)
+        await fetch('http://localhost:3000/data', requestOptions)
+            // await fetch('https://sky-cast-backend-b4e180440fb6.herokuapp.com/data', requestOptions)
             .then((response) => response.json())
             .then((jsonData) => {
                 setWeatherInfo(jsonData);
@@ -40,8 +40,8 @@ const Main = () => {
     useEffect(() => {
         if (!renderAfterCalled.current) {
             fetchWeatherData();
-          }
-          renderAfterCalled.current = true;
+        }
+        renderAfterCalled.current = true;
     }, []);
 
     if (loading) {
@@ -54,8 +54,10 @@ const Main = () => {
         <div className="main">
             <div className="main-container">
                 <SearchBar onSearch={handleSearch} />
-                <Headline weatherData={weatherInfo.curr} />
-                <SublineSection weatherData={weatherInfo.forecast} />
+                <div className="main-weather-container">
+                    <Headline weatherData={weatherInfo.curr} />
+                    <SublineSection weatherData={weatherInfo.forecast} />
+                </div>
             </div>
         </div>
     );

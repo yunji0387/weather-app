@@ -1,6 +1,6 @@
 .subline-card-container {
   width: 19%;
-  height: 200px;
+  height: 180px;
   display: flex;
   align-items: center;
   /* background-color: aqua; */
@@ -8,9 +8,9 @@
 
 .subline-content {
   width: 100%;
-  height: 90%;
-  background-color: white;
-  border: 5px solid #ccc;
+  height: 100%;
+  /* background-color: white; */
+  border: 3px solid white;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -33,31 +33,49 @@
 }
 
 .subline-content-degree-container {
-  width: 80%;
+  width: 90%;
   height: 12%;
   /* background-color: white; */
-  margin-top: 10%;
+  /* margin-top: 10%; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .subline-content-degree-text {
-  font-size: 15px;
-    font-weight: bold;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
 }
 
-.subline-content-date-container {
-  width: 80%;
+.subline-content-main-container {
+  width: 95%;
   height: 12%;
   /* background-color: white; */
-  margin-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.subline-content-main-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subline-content-date-container {
+  width: 90%;
+  height: 15%;
+  /* background-color: white; */
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .subline-content-date-text {
-  font-size: 12px;
+  margin: -2px;
+  font-size: 15px;
   font-weight: bold;
 }

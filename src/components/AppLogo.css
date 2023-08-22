@@ -1,11 +1,8 @@
 .app-logo-container {
-  /* background-color: aquamarine; */
-  width: 260px;
-  min-width: 260px;
-  height: 75px;
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin: 0;
 }
 
 .app-logo-container:hover {
@@ -19,17 +16,18 @@
 }
 
 .app-logo-img-container {
-  height: 70px;
-  width: 70px;
+  height: 7vh;
+  width: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
   transition: 0.1s;
 }
 
 .app-logo-img {
-  height: 50px;
-  width: 50px;
+  height: 6vh;
+  width: 6vh;
   animation: ccw-icon-rotation 25s infinite linear;
 }
 
@@ -43,11 +41,19 @@
 }
 
 .app-logo-text {
-  font-size: 50px;
+  margin: 0;
+  /* font-size: 50px; */
+  font-size: 6.3vh;
   font-family: "Passion One", cursive;
   -webkit-text-stroke-width: 2px;
   color: white;
   -webkit-text-stroke-color: darkgrey;
   text-shadow: 3px 0 darkgrey;
   letter-spacing: 0.2rem;
+}
+
+@media (max-height: 600px) {
+  .app-logo-text {
+    -webkit-text-stroke-width: 1px;
+  }
 }

@@ -30,6 +30,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer">
+        <p className="footer-text">Weather Data Provider: OpenWeather </p>
         <p className="footer-text">&copy; {new Date().getFullYear()} Sky Cast. All rights reserved.</p>
       </div>
     </footer>
