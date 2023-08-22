@@ -33,11 +33,14 @@ const Main = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ key: access_key })
         };
+        // await fetch('http://localhost:3000/', requestOptions)
         await fetch('https://sky-cast-backend-b4e180440fb6.herokuapp.com/', requestOptions)
             .then((response) => response.json())
             .then((jsonData) => {
                 setWeatherInfo(jsonData);
                 setLoading(false);
+                console.log(jsonData);
+
             })
             .catch((error) => {
                 console.log(error);
