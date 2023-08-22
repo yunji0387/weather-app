@@ -1,3 +1,21 @@
 .App {
   text-align: center;
 }
+
+.cloud{
+  background:url('./assets/clouds.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height:100%;
+  width:100%;
+  animation:cloudani 800s linear infinite;
+}
+@keyframes cloudani{
+  from{
+    background-position:0 0;
+  }
+  to{
+    background-position:100% 0;
+  }
+}

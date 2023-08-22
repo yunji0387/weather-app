@@ -4,7 +4,9 @@ import Home from './pages/Home';
 function App() {
   return (
     <Router>
-      <Home />
+      <div className="cloud">
+        <Home />
+      </div>
     </Router>
   );
 }
