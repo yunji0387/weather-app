@@ -8,11 +8,11 @@ const SublineSection = (props) => {
     return (
         <div className="subline-section-container">
             <div className="subline-section">
-                <SublineCard iconURL={props.weatherData.forecasts[0].iconURL} temp={props.weatherData.forecasts[0].temp} />
-                <SublineCard iconURL={props.weatherData.forecasts[1].iconURL} temp={props.weatherData.forecasts[1].temp} />
-                <SublineCard iconURL={props.weatherData.forecasts[2].iconURL} temp={props.weatherData.forecasts[2].temp} />
-                <SublineCard iconURL={props.weatherData.forecasts[3].iconURL} temp={props.weatherData.forecasts[3].temp} />
-                <SublineCard iconURL={props.weatherData.forecasts[4].iconURL} temp={props.weatherData.forecasts[4].temp} />
+                <SublineCard forecast={props.weatherData.forecasts[0]} />
+                <SublineCard forecast={props.weatherData.forecasts[1]} />
+                <SublineCard forecast={props.weatherData.forecasts[2]} />
+                <SublineCard forecast={props.weatherData.forecasts[3]} />
+                <SublineCard forecast={props.weatherData.forecasts[4]} />
             </div>
         </div>
     );
