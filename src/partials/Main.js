@@ -7,6 +7,8 @@ import Loading from '../components/Loading';
 const Main = () => {
     const handleSearch = (query) => {
         console.log('Search query:', query);
+        setLoading(true);
+        fetchWeatherData(query);
     };
 
     const [weatherInfo, setWeatherInfo] = useState({});
@@ -14,15 +16,21 @@ const Main = () => {
 
     const renderAfterCalled = useRef(false); //make sure that react only render once
 
-    const fetchWeatherData = async () => {
+    const fetchWeatherData = async (cityName = "") => {
+        // let apiURL = "http://localhost:3000/data"; //for local testing
+        let apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data";
+        if(cityName !== ""){
+            // apiURL = "http://localhost:3000/data?city=" + cityName; // for local testing
+            apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data?city=" + cityName;
+        }
+
         const access_key = process.env.REACT_APP_WEATHER_ACESS_KEY;
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ key: access_key })
+            body: JSON.stringify({ key: access_key , city: cityName})
         };
-        // await fetch('http://localhost:3000/data', requestOptions)
-        await fetch('https://sky-cast-backend-b4e180440fb6.herokuapp.com/data', requestOptions)
+        await fetch(apiURL, requestOptions)
             .then((response) => response.json())
             .then((jsonData) => {
                 setWeatherInfo(jsonData);
@@ -39,7 +47,7 @@ const Main = () => {
 
     useEffect(() => {
         if (!renderAfterCalled.current) {
-            fetchWeatherData();
+            fetchWeatherData("");
         }
         renderAfterCalled.current = true;
     }, []);

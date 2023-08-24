@@ -6,7 +6,13 @@ const SearchBar = ({ onSearch }) => {
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
-    onSearch(event.target.value);
+    // onSearch(event.target.value);
+  };
+
+  const handleKeyPress = (event) => {
+    if(event.key === "Enter") {
+      onSearch(searchTerm);
+    }
   };
 
   return (
@@ -16,6 +22,7 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Search a city name here..."
         value={searchTerm}
         onChange={handleInputChange}
+        onKeyDown={handleKeyPress}
       />
     </div>
   );

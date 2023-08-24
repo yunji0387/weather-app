@@ -15,8 +15,10 @@ const HeadlineCard = (props) => {
     }
 
     const dateFormat = { hour: "numeric", minute: "numeric" };
-    const lastUpdate = new Date(props.weatherData.lastUpdate);
-    const convertedLastUpdate = lastUpdate.toLocaleDateString("en-US", dateFormat);
+    // const lastUpdate = new Date(props.weatherData.lastUpdate);
+    const time = new Date(props.weatherData.dt*1000);
+    // const convertedLastUpdate = lastUpdate.toLocaleDateString("en-US", dateFormat);
+    const convertedTime = time.toLocaleDateString("en-US", dateFormat);
 
     return (
         <div className="headline-container">
@@ -45,10 +47,13 @@ const HeadlineCard = (props) => {
                     <div className="headline-weather-description-container">
                         <p className="headline-weather-description-text">{props.weatherData.weather[0].description}</p>
                     </div>
-                    <div className="headline-weather-lastupdate-container">
+                    <div className="headline-weather-time-container">
+                        <p className="headline-weather-time-text">{convertedTime}</p>
+                    </div>
+                    {/* <div className="headline-weather-lastupdate-container">
                         <p className="headline-weather-lastupdate-header">Last update: </p>
                         <p className="headline-weather-lastupdate-text">{convertedLastUpdate}</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
