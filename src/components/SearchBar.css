@@ -1,12 +1,13 @@
 .search-bar-container {
-    width: 100%;
-    display: flex;
+    width: 95%;
+    /* display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 50px; */
+    height: fit-content;
 }
 
-.search-bar-container input {
+/* .search-bar-container input {
     border: 3px solid #ccc;
     border-radius: 20px;
     width: 85%;
@@ -17,10 +18,9 @@
 
 .search-bar-container input::placeholder {
     font-size: 20px;
-    /* padding-left: 20px; */
 }
 
 .search-bar-container input::content {
     font-size: 20px;
     padding-left: 20px;
-}
+} */

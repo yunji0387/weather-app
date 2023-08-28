@@ -8,7 +8,7 @@ const HeadlineCard = (props) => {
             <div className="headline-container">
                 <div className="headline-content-error">
                     <p className="headline-content-error-heading"> Error...</p>
-                    <p className="headline-content-error-text">Please refresh or try again later. </p>
+                    <p className="headline-content-error-text">Please refresh or try again. </p>
                 </div>
             </div>
         );
