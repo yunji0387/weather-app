@@ -8,7 +8,7 @@ const Main = () => {
     const handleSearch = (query) => {
         console.log('Search query:', query);
         setLoading(true);
-        fetchWeatherData(query);
+        fetchWeatherData(query.lat, query.lng);
     };
 
     const [weatherInfo, setWeatherInfo] = useState({});
@@ -16,19 +16,26 @@ const Main = () => {
 
     const renderAfterCalled = useRef(false); //make sure that react only render once
 
-    const fetchWeatherData = async (cityName = "") => {
+    const fetchWeatherData = async (lat = "", lon = "") => {
+        // lat = 44.34;
+        // lon = 10.99;
+        // let apiURL = "http://localhost:3000/data/weather"; //for local testing
         // let apiURL = "http://localhost:3000/data"; //for local testing
-        let apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data";
-        if(cityName !== ""){
+        let apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data/weather";
+        if(lat !== "" && lon !== ""){
+            // apiURL = "http://localhost:3000/data/weather?lat=" + lat + "&lon=" + lon; // for local testing
             // apiURL = "http://localhost:3000/data?city=" + cityName; // for local testing
-            apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data?city=" + cityName;
+            apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data/weather?lat=" + lat + "&lon=" + lon;
         }
 
         const access_key = process.env.REACT_APP_WEATHER_ACESS_KEY;
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ key: access_key , city: cityName})
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${access_key}` // Set the access key as an Authorization header
+            },
+            body: JSON.stringify({ key: access_key })
         };
         await fetch(apiURL, requestOptions)
             .then((response) => response.json())

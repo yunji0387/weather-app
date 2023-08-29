@@ -1,13 +1,89 @@
-.search-bar-container {
-    width: 95%;
-    /* display: flex;
+/* Add this to your CSS file */
+.search-bar {
+    width: 90%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column; /* Change the direction to column */
     align-items: center;
     justify-content: center;
-    height: 50px; */
-    height: fit-content;
+    position: relative; /* Add relative positioning */
 }
 
-/* .search-bar-container input {
+.search-bar-container {
+    width: 100%; /* Adjust the width to take the full width */
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: blue; */
+    position: relative; /* Add relative positioning */
+}
+
+.location-search-input {
+    border: 3px solid #ccc;
+    border-radius: 20px;
+    width: 90%;
+    height: 35px;
+    font-size: 20px;
+    padding: 0 25px;
+}
+
+.location-search-input::placeholder {
+    font-size: 20px;
+}
+
+.autocomplete-dropdown-container {
+    position: absolute;
+    top: 100%; /* Position it below the search bar */
+    left: 0; /* Adjust left positioning as needed */
+    z-index: 1;
+    width: 100%;
+    max-height: 200px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    visibility: hidden; /* Hide it by default */
+    opacity: 0; /* Hide it by default */
+    transition: visibility 0.3s, opacity 0.3s; /* Add transitions for smooth visibility */
+}
+
+/* Show the dropdown when input is focused */
+.location-search-input:focus + .autocomplete-dropdown-container {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* CSS for suggestion item styling */
+.suggestion-item {
+    width: 90%;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.suggestion-item--active {
+    width: 90%;
+    background-color: #ccc;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* .search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.search-bar-container input {
     border: 3px solid #ccc;
     border-radius: 20px;
     width: 85%;
