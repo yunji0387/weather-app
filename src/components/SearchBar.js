@@ -45,11 +45,11 @@ const GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export default function SearchBar({ onSearch }) {
     const [address, setAddress] = useState("");
-    const [coordinates, setCoordinates] = useState({
-        lat: null,
-        lng: null
-    });
-
+    // const [coordinates, setCoordinates] = useState({
+    //     lat: null,
+    //     lng: null
+    // });
+    
     const [loading, error] = useScript({ src: "https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_MAPS_API_KEY + "&libraries=places" });
 
     if (loading) return <h3>Loading Stripe API...</h3>;
@@ -60,8 +60,8 @@ export default function SearchBar({ onSearch }) {
         const latLon = await getLatLng(result[0]);
         console.log(latLon)
         setAddress(value);
-        setCoordinates(latLon);
-        onSearch(latLon);
+        // setCoordinates(latLon);
+        onSearch({...latLon, value});
     }
 
     return (
@@ -81,7 +81,7 @@ export default function SearchBar({ onSearch }) {
                             })}
                         />
                         <div className="autocomplete-dropdown-container">
-                            {loading && <div>Loading...</div>}
+                            {loading && <div className='suggestion-item'>Loading...</div>}
                             {suggestions.map((suggestion, index) => {
                                 const className = suggestion.active
                                     ? 'suggestion-item--active' // Apply active suggestion styles here
