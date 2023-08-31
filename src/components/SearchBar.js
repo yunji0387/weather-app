@@ -1,39 +1,4 @@
-// import React, { useEffect, useState } from "react";
-// import './SearchBar.css';
-
-// const SearchBar = ({ onSearch }) => {
-//   const [searchTerm, setSearchTerm] = useState('');
-
-//   const handleInputChange = (event) => {
-//     setSearchTerm(event.target.value);
-//     console.log(searchTerm);
-//     // onSearch(event.target.value);
-//   };
-
-//   const handleKeyPress = (event) => {
-//     if(event.key === "Enter") {
-//       onSearch(searchTerm);
-//       console.log("---------");
-//       console.log(searchTerm);
-//     }
-//   };
-
-//   return (
-//     <div className="search-bar-container">
-//       <input
-//         type="text"
-//         placeholder="Search a city name here..."
-//         value={searchTerm}
-//         onChange={handleInputChange}
-//         onKeyDown={handleKeyPress}
-//       />
-//     </div>
-//   );
-// };
-
-// export default SearchBar;
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PlacesAutocomplete, {
     geocodeByAddress,
     getLatLng,
@@ -45,23 +10,31 @@ const GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export default function SearchBar({ onSearch }) {
     const [address, setAddress] = useState("");
-    // const [coordinates, setCoordinates] = useState({
-    //     lat: null,
-    //     lng: null
-    // });
-    
     const [loading, error] = useScript({ src: "https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_MAPS_API_KEY + "&libraries=places" });
 
     if (loading) return <h3>Loading Stripe API...</h3>;
     if (error) return <h3>Failed to load Stripe API: {error.message}</h3>;
 
-    const handleSelect = async value => {
+    const handleSelect = async (value, placeId) => {
+        if(!placeId){
+            return; //prevent further process as no valid address found
+        }
         const result = await geocodeByAddress(value);
         const latLon = await getLatLng(result[0]);
-        console.log(latLon)
         setAddress(value);
-        // setCoordinates(latLon);
-        onSearch({...latLon, value});
+        onSearch({ ...latLon, value });
+    }
+
+    const onError = (status, clearSuggestions) => {
+        console.log('Google Maps API returned error with status: ', status);
+        clearSuggestions();
+        alert("Please enter valid location");
+    }
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            alert("Please select one of the suggested locations. If no suggestions appear, please double-check the entered address.");
+        }
     }
 
     return (
@@ -70,14 +43,15 @@ export default function SearchBar({ onSearch }) {
                 value={address}
                 onChange={setAddress}
                 onSelect={handleSelect}
-                // onSearch={onSearch}
+                onError={onError}
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                     <div className='search-bar-container'>
                         <input
                             {...getInputProps({
                                 placeholder: 'Search Location Here ...',
-                                className: 'location-search-input', // Apply input styles here
+                                className: 'location-search-input', // Apply input styles
+                                onKeyDown: handleKeyDown, // Prevent Enter key press
                             })}
                         />
                         <div className="autocomplete-dropdown-container">
@@ -90,7 +64,7 @@ export default function SearchBar({ onSearch }) {
                                     <div
                                         key={index}
                                         {...getSuggestionItemProps(suggestion, {
-                                            className, // Use the class name here
+                                            className, // Use the class name
                                         })}
                                     >
                                         <span>{suggestion.description}</span>
