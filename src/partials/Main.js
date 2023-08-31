@@ -17,11 +17,11 @@ const Main = () => {
     const renderAfterCalled = useRef(false); //make sure that react only render once
 
     const fetchWeatherData = async (lat = "", lon = "", addressName = "") => {
-        let apiURL = "http://localhost:3000/data/weather"; //for local testing
-        // let apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data/weather";
+        // let apiURL = "http://localhost:3000/data/weather"; //for local testing
+        let apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data/weather";
         if(lat !== "" && lon !== ""){
-            apiURL = "http://localhost:3000/data/weather?lat=" + lat + "&lon=" + lon; // for local testing
-            // apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data/weather?lat=" + lat + "&lon=" + lon;
+            // apiURL = "http://localhost:3000/data/weather?lat=" + lat + "&lon=" + lon; // for local testing
+            apiURL = "https://sky-cast-backend-b4e180440fb6.herokuapp.com/data/weather?lat=" + lat + "&lon=" + lon;
         }
 
         const access_key = process.env.REACT_APP_WEATHER_ACESS_KEY;
