@@ -25,9 +25,14 @@ const HeadlineCard = (props) => {
         <div className="headline-container">
 
             <div className="headline-content">
-                
+
                 <div className="headline-address-container">
-                    <p className="headline-address-text">This is Address .....</p>
+                    <p className="headline-address-text">
+                        {props.weatherData.addressName.length > 30
+                            ? `${props.weatherData.addressName.substring(0, 40)} ...`
+                            : props.weatherData.addressName
+                        }
+                    </p>
                 </div>
 
                 <div className="headline-content-container">
