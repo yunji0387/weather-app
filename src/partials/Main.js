@@ -27,7 +27,7 @@ const Main = () => {
         const access_key = process.env.REACT_APP_WEATHER_ACESS_KEY;
         const requestOptions = {
             method: 'POST',
-            headers: { 
+            headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${access_key}` // Set the access key as an Authorization header
             },
